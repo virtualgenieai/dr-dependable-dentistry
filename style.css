@@ -1,4 +1,4 @@
-
+\
 /* =========================================
    DR DEPENDABLE DENTISTRY
    Premium burgundy, gold & ivory design
@@ -1720,5 +1720,64 @@ button:focus-visible {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   CREATIVE HERO PORTRAIT UPDATE
+   Asymmetric editorial frame with gold detail
+========================================= */
+
+.hero-image-frame {
+  width: min(100%, 430px);
+  height: 520px;
+  border-radius: 24px 90px 24px 90px;
+  border: 1px solid rgba(201, 164, 92, 0.75);
+  background: linear-gradient(145deg, #faf7f0, #e8d8c5);
+  box-shadow:
+    16px 16px 0 rgba(201, 164, 92, 0.10),
+    28px 28px 0 rgba(201, 164, 92, 0.04);
+  transform: rotate(1.5deg);
+}
+
+.hero-image-frame::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 12px;
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  border-radius: 16px 72px 16px 72px;
+  pointer-events: none;
+}
+
+.hero-doctor {
+  object-position: center top;
+  transform: rotate(-1.5deg) scale(1.04);
+}
+
+.hero-image-caption {
+  left: -5px;
+  min-width: 270px;
+  max-width: calc(100% - 10px);
+  padding: 18px 24px;
+  color: var(--burgundy);
+  border: 1px solid rgba(201, 164, 92, 0.65);
+  border-radius: 4px 28px 4px 28px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 760px) {
+  .hero-image-frame {
+    width: min(100%, 350px);
+    height: 430px;
+    border-radius: 20px 65px 20px 65px;
+  }
+
+  .hero-image-frame::before {
+    border-radius: 13px 48px 13px 48px;
+  }
+
+  .hero-doctor {
+    object-position: center top;
   }
 }
