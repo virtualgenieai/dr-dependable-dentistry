@@ -2701,3 +2701,15 @@ p { color: inherit; }
     font-size: 0.75rem;
   }
 }
+
+/* Premium refinement: soften the main content card */
+@media (max-width: 767px) {
+  .about-card,
+  .doctor-card,
+  .section-card,
+  .content-card {
+    border-color: rgba(183, 148, 83, 0.20);
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(65, 30, 39, 0.045);
+  }
+}
