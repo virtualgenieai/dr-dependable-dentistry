@@ -2206,3 +2206,292 @@ p { color: inherit; }
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* FINAL REFINEMENT: more distinctive hero + doctor profile */
+.hero-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+  gap: clamp(38px, 5vw, 78px);
+  min-height: 690px;
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+.hero-content { max-width: 680px; }
+.hero h1 {
+  max-width: 700px;
+  font-size: clamp(3.25rem, 4.45vw, 5.15rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+.hero-description { max-width: 490px; font-size: 1.02rem; }
+.hero-visual { padding: 0 12px 46px 24px; }
+.hero-image-frame {
+  width: min(100%, 440px);
+  height: 555px;
+  border-radius: 34px 150px 14px 14px;
+  box-shadow: 15px 16px 0 rgba(201, 164, 92, .13);
+}
+.hero-image-frame::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 10px;
+  border: 1px solid rgba(201, 164, 92, .48);
+  border-radius: 27px 140px 9px 9px;
+  pointer-events: none;
+}
+.hero-doctor { object-position: center 12%; }
+.hero-image-caption {
+  left: -8px;
+  bottom: 0;
+  min-width: 285px;
+  padding: 20px 24px;
+  border: 1px solid rgba(201, 164, 92, .65);
+  border-radius: 0 26px 0 0;
+}
+.hero-decor-one { right: -5px; top: 2%; width: 92px; height: 92px; }
+.hero-decor-two { right: 0; bottom: 2%; width: 52px; height: 52px; }
+
+/* Treatment labels should not resemble template numbering */
+.treatment-card .card-number { display: none !important; }
+
+/* Doctor profile: editorial, clear, and easier to scan */
+.doctor-section { padding-top: clamp(76px, 8vw, 118px); padding-bottom: clamp(76px, 8vw, 118px); }
+.doctor-grid {
+  grid-template-columns: minmax(300px, .82fr) minmax(0, 1fr);
+  gap: clamp(48px, 7vw, 104px);
+  padding: 0;
+}
+.doctor-profile-image { max-width: 450px; min-height: 500px; padding: 0 18px 18px 0; }
+.doctor-profile-image > img {
+  height: 530px;
+  border-radius: 14px 115px 14px 14px;
+  object-position: center 10%;
+}
+.doctor-photo-caption {
+  left: -18px;
+  max-width: calc(100% - 12px);
+  padding: 18px 24px;
+  border-radius: 0 20px 0 0;
+}
+.doctor-profile-content { max-width: 650px; }
+.doctor-profile-content h2 {
+  max-width: 620px;
+  margin: 0 0 12px;
+  font-size: clamp(2.55rem, 4vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+.doctor-profile-content h2 span { display: block; }
+.doctor-role { margin-bottom: 0; font-size: 1rem; }
+.role-separator { color: var(--gold); padding: 0 5px; }
+.doctor-profile-content .gold-divider { margin: 24px 0 26px; }
+.doctor-profile-content .doctor-intro {
+  color: #65565b;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  max-width: 610px;
+  margin-bottom: 28px;
+}
+.doctor-care-heading {
+  margin: 0 0 16px;
+  color: var(--burgundy);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+.doctor-care-list {
+  list-style: none;
+  display: grid;
+  gap: 13px;
+  padding: 0;
+  margin: 0 0 30px;
+}
+.doctor-care-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #65565b;
+  line-height: 1.6;
+  font-size: .95rem;
+}
+.doctor-care-list li span {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  margin-top: 1px;
+  border-radius: 50%;
+  color: #68451c;
+  background: #f5ead4;
+  font-size: .8rem;
+  font-weight: 700;
+}
+.doctor-appointment-button { margin-top: 0 !important; }
+
+@media (max-width: 1024px) {
+  .hero-grid { gap: 34px; min-height: 610px; }
+  .hero h1 { font-size: clamp(2.8rem, 5.2vw, 4rem); }
+  .hero-image-frame { height: 490px; }
+  .doctor-grid { gap: 42px; }
+}
+@media (max-width: 760px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+    padding-top: 54px;
+    padding-bottom: 62px;
+  }
+  .hero-content { text-align: left; }
+  .hero h1 { font-size: clamp(2.7rem, 10vw, 4rem); margin-left: 0; }
+  .hero-description { margin-left: 0; }
+  .doctor-credential, .hero-actions { justify-content: flex-start; }
+  .hero-location { margin-left: 0; }
+  .hero-visual { max-width: 470px; padding: 0 10px 35px 16px; }
+  .hero-image-frame { height: clamp(390px, 112vw, 500px); border-radius: 26px 100px 12px 12px; }
+  .hero-image-frame::before { border-radius: 19px 90px 7px 7px; }
+  .hero-image-caption { left: 0; min-width: 0; width: min(300px, 94%); padding: 15px 17px; }
+  .doctor-grid { grid-template-columns: minmax(0, 1fr); gap: 42px; }
+  .doctor-profile-image { width: min(100%, 420px); min-height: 0; margin: 0 auto; }
+  .doctor-profile-image > img { height: clamp(400px, 115vw, 500px); }
+  .doctor-profile-content h2 { font-size: clamp(2.4rem, 8.5vw, 3.4rem); }
+}
+@media (max-width: 480px) {
+  .hero-content { text-align: left; }
+  .hero h1 { font-size: clamp(2.45rem, 10.3vw, 3.2rem); }
+  .hero-actions { align-items: stretch; }
+  .hero-image-caption strong { font-size: .92rem; }
+  .doctor-section { padding-top: 64px; padding-bottom: 64px; }
+  .doctor-profile-image { padding-right: 10px; padding-bottom: 14px; }
+  .doctor-photo-caption { left: -6px; padding: 14px 16px; }
+  .doctor-care-list { gap: 12px; }
+}
+
+
+/* VISUAL DIRECTION: premium editorial hero with clinic photography */
+.hero {
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(ellipse at 72% 35%, rgba(105, 31, 52, .42), transparent 42%), #310b18;
+}
+.hero-grid {
+  grid-template-columns: minmax(0, 1.02fr) minmax(390px, .98fr);
+  gap: clamp(34px, 4vw, 64px);
+  min-height: 570px;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  align-items: center;
+}
+.hero-content { position: relative; z-index: 3; max-width: 700px; }
+.hero h1 {
+  max-width: 740px;
+  font-size: clamp(3.15rem, 4.6vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -.052em;
+}
+.hero-description { max-width: 560px; font-size: 1.04rem; line-height: 1.75; }
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  padding: 0 0 28px 0;
+  isolation: isolate;
+}
+.hero-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: clamp(390px, 39vw, 500px);
+  overflow: hidden;
+  border: 1px solid rgba(219, 181, 107, .8);
+  border-radius: 46% 12px 12px 46% / 52% 12px 12px 52%;
+  background: #5a3026;
+  box-shadow: 16px 18px 0 rgba(201, 164, 92, .12);
+}
+.hero-image-frame::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 10px;
+  border: 1px solid rgba(246, 223, 174, .46);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.hero-clinic-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  filter: saturate(.88) contrast(1.02);
+}
+.hero-image-caption {
+  position: absolute;
+  z-index: 4;
+  left: auto;
+  right: -8px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 260px;
+  padding: 17px 22px;
+  color: var(--burgundy);
+  background: #fbf6ed;
+  border: 1px solid rgba(201, 164, 92, .6);
+  border-radius: 18px 0 18px 0;
+  box-shadow: 0 14px 35px rgba(17, 4, 8, .18);
+}
+.hero-image-caption .caption-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 50%;
+  background: #f0e3ca;
+  color: #6d431a;
+  font-size: 1.5rem;
+}
+.hero-image-caption strong { display: block; color: var(--burgundy); font-family: var(--font-heading); font-size: 1.02rem; }
+.hero-image-caption div span { display: block; margin-top: 4px; color: #66585d; font-size: .84rem; }
+.hero-decor-one { z-index: -1; }
+.value-strip { background: #fbf7f0; border-bottom: 1px solid rgba(164, 119, 53, .12); }
+.value-grid { min-height: 104px; }
+.value-item { padding: 18px clamp(10px, 2vw, 28px); }
+.value-icon { background: #f2e7d4; border: 1px solid rgba(201,164,92,.22); }
+
+/* Keep the doctor portrait exclusive to the dentist profile section */
+.doctor-profile-image > img { object-position: center 10%; }
+.doctor-profile-content { align-self: center; }
+.doctor-profile-content h2 { font-size: clamp(2.45rem, 3.8vw, 3.8rem); }
+.doctor-care-list { grid-template-columns: 1fr; }
+
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(320px, .88fr); gap: 30px; min-height: 560px; }
+  .hero h1 { font-size: clamp(2.8rem, 5vw, 4rem); }
+  .hero-image-frame { height: clamp(370px, 48vw, 450px); }
+  .hero-image-caption { right: -4px; min-width: 240px; }
+}
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 34px; padding-top: 48px; padding-bottom: 54px; }
+  .hero h1 { font-size: clamp(2.6rem, 10vw, 3.7rem); }
+  .hero-visual { width: min(100%, 520px); margin-inline: auto; padding: 0 8px 26px 0; }
+  .hero-image-frame { height: clamp(310px, 82vw, 420px); border-radius: 34% 12px 12px 12px / 40% 12px 12px 12px; }
+  .hero-image-caption { right: 0; bottom: 0; min-width: 0; width: min(300px, 92%); padding: 13px 15px; }
+  .hero-image-caption .caption-mark { width: 38px; height: 38px; flex-basis: 38px; }
+  .value-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .value-item { justify-content: flex-start; }
+}
+@media (max-width: 480px) {
+  .hero-grid { padding-top: 38px; }
+  .hero h1 { font-size: clamp(2.35rem, 10.5vw, 3rem); }
+  .hero-description { font-size: .96rem; }
+  .hero-image-frame { height: 320px; }
+  .hero-image-caption strong { font-size: .9rem; }
+  .hero-image-caption div span { font-size: .76rem; }
+  .value-grid { gap: 0; }
+  .value-item { gap: 10px; font-size: .82rem; }
+  .value-icon { width: 42px; height: 42px; flex-basis: 42px; }
+}
