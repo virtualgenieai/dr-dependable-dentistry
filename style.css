@@ -2702,14 +2702,36 @@ p { color: inherit; }
   }
 }
 
-/* Premium refinement: soften the main content card */
-@media (max-width: 767px) {
-  .about-card,
-  .doctor-card,
-  .section-card,
-  .content-card {
-    border-color: rgba(183, 148, 83, 0.20);
-    border-radius: 18px;
-    box-shadow: 0 8px 28px rgba(65, 30, 39, 0.045);
+
+/* MOBILE ONLY — restore premium breathing room in dentist profile */
+@media (max-width: 760px) {
+  .doctor-profile-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    box-sizing: border-box;
+  }
+
+  .doctor-profile-content h2,
+  .doctor-profile-content .doctor-intro,
+  .doctor-profile-content .doctor-care-heading,
+  .doctor-profile-content .doctor-care-list,
+  .doctor-profile-content .doctor-role,
+  .doctor-profile-content .eyebrow,
+  .doctor-profile-content .gold-divider {
+    max-width: 100%;
+  }
+
+  .doctor-profile-content .doctor-appointment-button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .doctor-profile-content {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 }
