@@ -8226,3 +8226,22 @@ p { color: inherit; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
 @media (prefers-reduced-motion: reduce) { .main-nav, .main-nav a, .menu-toggle span { transition-duration: .01ms !important; } }
+
+/* DR DEPENDABLE DENTISTRY — mobile gallery toolbar fix */
+@media (max-width: 767px) {
+  .gallery-toolbar {
+    display: block;
+  }
+
+  .gallery-controls {
+    display: none !important;
+  }
+
+  .gallery-note {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
